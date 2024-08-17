@@ -24,8 +24,11 @@ if (isset($_POST['login-btn'])){
             if ($email === $user['email']){
                 $userFound = true;
                 if ($password === $user['password']){
-                    // sucess login
-                    
+                    // sucess login -> start session
+                    session_start();
+                    $_SESSION['name'] = $user['name'];
+                    $_SESSION['password'] = $password;
+                    header("location: welcome.php");
                 }
                 else{
                     $errors["userPassError"] = "Wrong Password";
