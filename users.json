@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "name": "Gamal Hassan",
+        "email": "gamal@nu.edu.eg",
+        "password": "mmmmmmmm",
+        "roomNum": "application1",
+        "profilePhoto": {
+            "name": "Capture.JPG",
+            "full_path": "Capture.JPG",
+            "type": "image\/jpeg",
+            "tmp_name": "C:\\xampp\\tmp\\phpC828.tmp",
+            "error": 0,
+            "size": 29340
+        }
+    },
+    {
+        "id": 2,
+        "name": "Gamal Hassan",
+        "email": "gamal@nu.edu.eg",
+        "password": "mmmmmmmm",
+        "roomNum": "application1",
+        "profilePhoto": {
+            "name": "Capture.JPG",
+            "full_path": "Capture.JPG",
+            "type": "image\/jpeg",
+            "tmp_name": "C:\\xampp\\tmp\\php92F2.tmp",
+            "error": 0,
+            "size": 29340
+        }
+    },
+    {
+        "id": 3,
+        "name": "Gamal Hassan",
+        "email": "gamal@nu.edu.eg",
+        "password": "mmmmmmmm",
+        "roomNum": "application1",
+        "profilePhoto": {
+            "name": "Capture.JPG",
+            "full_path": "Capture.JPG",
+            "type": "image\/jpeg",
+            "tmp_name": "C:\\xampp\\tmp\\phpBB1C.tmp",
+            "error": 0,
+            "size": 29340
+        }
+    },
+    {
+        "id": 4,
+        "name": "Adham Ahmed Hamouda",
+        "email": "adHammouda@nu.edu.eg",
+        "password": "aaaaaaaa",
+        "roomNum": "application1",
+        "profilePhoto": {
+            "name": "WhatsApp Image 2022-12-29 at 6.23.488 PM.jpeg",
+            "full_path": "WhatsApp Image 2022-12-29 at 6.23.488 PM.jpeg",
+            "type": "image\/jpeg",
+            "tmp_name": "C:\\xampp\\tmp\\php3179.tmp",
+            "error": 0,
+            "size": 58088
+        }
+    },
+    {
+        "id": 5,
+        "name": "Adham Ahmed Hamouda",
+        "email": "adham@gmail.com",
+        "password": "aaaaaaaa",
+        "roomNum": "application2",
+        "profilePhoto": {
+            "name": "Capture.JPG",
+            "full_path": "Capture.JPG",
+            "type": "image\/jpeg",
+            "tmp_name": "C:\\xampp\\tmp\\phpFC39.tmp",
+            "error": 0,
+            "size": 29340
+        }
+    }
+]
