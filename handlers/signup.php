@@ -61,8 +61,17 @@ if (isset($_POST['submit-btn'])){
         $errors["profilePhoto"] = "Profile Photo is required";
     }
     else if (isset($_FILES['profilePhoto'])){
+        var_dump( $_FILES);
         $file = $_FILES['profilePhoto'];
         $fileSize = $file['size'];
+        $ext=explode('.', $file['name']);
+        $file_ext=strtolower(end($ext));
+        $ext= $file["full_path"];
+        $extensions= array("jpeg","jpg","png");
+        // File Extension
+        if(in_array($file_ext , $extensions) === false){
+            $errors['profilePhoto']=" Extension not allowed, please choose a JPEG , JPG or PNG file.";
+        }
 
         // Maximum size is 5MB and Minimum size is 1KB
         if ($fileSize < 1 * 1024){

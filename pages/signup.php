@@ -85,7 +85,7 @@
                 <label for="formFile" class="form-label">Profile Picture</label>
             </div>
             <div class="w-75">
-                <input type="file" class="form-control" id="formFile" name="profilePhoto" accept="image/*">
+                <input type="file" class="form-control" id="formFile" name="profilePhoto">
                 <span class="text-danger">
                     <?= isset($errors['profilePhoto']) ? $errors['profilePhoto'] : "" ?>
                 </span>
