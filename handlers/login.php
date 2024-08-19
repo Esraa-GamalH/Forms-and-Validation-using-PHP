@@ -7,11 +7,11 @@ if (isset($_POST['login-btn'])){
     "password" => $password, 
     ] = $_POST;
 
-    if (!isset($email) || trim(empty($email))){
+    if (!isset($email) || empty(trim($email))){
         $errors["email"] = "Email is required";
     }
 
-    if (!isset($password) || trim(empty($password))){
+    if (!isset($password) || empty(trim($password))){
         $errors["password"] = "Password is required";
     }
 
@@ -20,8 +20,11 @@ if (isset($_POST['login-btn'])){
         $users = file_get_contents('users.json');
         //    convert json to array
         $users = json_decode($users, true);
+
+        // function to check if user exists
         foreach ($users as $user) {
             if ($email === $user['email']){
+                // better to be after check password
                 $userFound = true;
                 if ($password === $user['password']){
                     // sucess login -> start session

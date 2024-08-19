@@ -13,13 +13,13 @@ if (isset($_POST['submit-btn'])) {
         "roomNum" => $roomNum,
     ] = $_POST;
 
-    if (!isset($name) || trim(empty($name))) {
+    if (!isset($name) || empty(trim($name))) {
         $errors["name"] = "Name is required";
     }
 
 
     //Email validation with 2 ways
-    if (!isset($email) || trim(empty($email))) {
+    if (!isset($email) || empty(trim($email))) {
         $errors["email"] = "Email is required";
     } else {
         // 1) using filter_var
@@ -33,20 +33,20 @@ if (isset($_POST['submit-btn'])) {
     }
 
     //Password Validation
-    if (!isset($password) || trim(empty($password))) {
+    if (!isset($password) || empty(trim($password))) {
         $errors["password"] = "Password is required";
     } else if (!preg_match($passRegExp, $password)) {
         $errors["password"] = "Invalid password format. Must be 8 chars, lowerCase ,and _ only.";
     }
 
 
-    if (!isset($ConfirmPassword) || trim(empty($ConfirmPassword))) {
+    if (!isset($ConfirmPassword) || empty(trim($ConfirmPassword))) {
         $errors["ConfirmPassword"] = "Confirmation of password is required";
     } else if ($ConfirmPassword !== $password) {
         $errors["ConfirmPassword"] = "Doesn't match given password";
     }
 
-    if (!isset($roomNum) || trim(empty($roomNum))) {
+    if (!isset($roomNum) || empty(trim($roomNum))) {
         $errors["roomNum"] = "Room number is required";
     } else if ($roomNum !== "application1" && $roomNum !== "application2" && $roomNum !== "cloud") {
         $errors["roomNum"] = "You must choose from options given only";
@@ -54,6 +54,7 @@ if (isset($_POST['submit-btn'])) {
 
 
     // Photo Validation
+    //add isset
     if (empty($_FILES['profilePhoto']['name'])) {
         $errors["profilePhoto"] = "Profile Photo is required";
     } else if (isset($_FILES['profilePhoto'])) {
@@ -69,9 +70,9 @@ if (isset($_POST['submit-btn'])) {
             $errors['profilePhoto'] = " Extension not allowed, please choose a JPEG , JPG or PNG file.";
         }
 
-        // Maximum size is 5MB and Minimum size is 1KB
-        if ($fileSize < 1 * 1024) {
-            $errors["profilePhoto"] = "Photo size must be more than 1KB";
+        // add 5MB
+        if ($fileSize < 1 * 1024 || $fileSize > 5 * 1024 * 1024) {
+            $errors["profilePhoto"] = "Photo size must be more than 1KB and less than 5MB";
         }
     }
 
@@ -86,6 +87,7 @@ if (isset($_POST['submit-btn'])) {
         foreach ($users as $user) {
             $id = $user['id'];
         }
+        // we can use end()
         $id = $id + 1;
 
         $users[] = [
@@ -97,6 +99,7 @@ if (isset($_POST['submit-btn'])) {
             'profilePhoto' => $file
         ];
         // convert array to json
+        // pretty adds extra size
         $users = json_encode($users, JSON_PRETTY_PRINT);
         file_put_contents('users.json', $users);
 
